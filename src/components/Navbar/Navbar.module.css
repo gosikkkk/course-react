@@ -1,0 +1,14 @@
+.nav{
+  padding: 90px;
+  grid-area: n;
+  letter-spacing: 5px;
+}
+
+.item a.active{
+  color:rgb(205, 90, 167);
+  font-weight: 700;
+}
+.item a{
+  color:black;
+  text-decoration: none;
+}
