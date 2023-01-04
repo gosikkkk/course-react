@@ -6,3 +6,19 @@
 .header{
     grid-area: h;
 }
+
+.loginBlock{
+    padding: 38px;
+    float: right;
+    color:rgb(205, 90, 167);
+}
+
+.loginBlock a{
+    color:rgb(205, 90, 167);
+}
+
+.button{
+    background-color: #EEDDFF;
+    border: 6px solid #c0a2dc;
+    border-radius: 25px;
+}

@@ -5,7 +5,7 @@ const Post = (props) =>{
     return (
 
         <div className={s.item}>
-          <img src='https://i.pinimg.com/736x/2e/2e/21/2e2e2125ee53807c2d77b34773f84b5c.jpg' ></img>
+          <img src='https://cdn4.iconfinder.com/data/icons/web-mobile-2-6/20/87-1024.png' ></img>
           {props.massage}
           <div><span>like</span> { props.likesCount }</div>
         </div>

@@ -1,0 +1,15 @@
+.descriptionBlock{
+    display: flex;
+
+}
+
+.info{
+    display: inline-block;
+    padding: 20px;
+}
+
+.status{
+    background-color: #EEDDFF;
+    border: 6px solid #c0a2dc;
+    border-radius: 25px;
+}

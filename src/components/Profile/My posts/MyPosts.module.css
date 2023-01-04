@@ -5,3 +5,13 @@
 .posts{
     padding: 10px;
 }
+.button{ 
+    background-color: #EEDDFF;
+    border: 6px solid #c0a2dc;
+    border-radius: 25px;
+}
+
+.textarea{
+    background-color: #EEDDFF;
+    border: 4px solid #c0a2dc;
+}

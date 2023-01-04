@@ -1,31 +1,61 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './App.css';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import Header from './components/Header/Header';
+import HeaderConatainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom';
+import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
+import LoginPage from './components/Login/Login';
+import { connect } from 'react-redux';
+import { initializeApp } from './components/redux/app-reduser'
+import Preloader from './components/common/Preloader/Preloader';
 
 
-const App = (props) => {
 
-  return (
-      <div className='app-wrapper'>
-        <Header/>
-        <Navbar/>
 
-        <div className='app-wrapper-content'>
-        <Routes>
 
-          <Route path="/profile" element={<Profile/>}/>
+class App extends Component{
 
-          <Route path="/dialogs" element={<DialogsContainer/>}/>
-
-        </Routes>
-        </div>
-      </div>  
-  );
+  componentDidMount(){
+    this.props.initializeApp()
 }
 
+  render() {
 
-export default App;
+    if(!this.props.initialized){
+      return <Preloader/>
+    }
+
+    return(
+        <div className='app-wrapper'>
+          <HeaderConatainer/>
+          <Navbar/>
+
+          <div className='app-wrapper-content'>
+          <Routes>
+
+            <Route path="/dialogs" element={<DialogsContainer/>}/>
+
+            <Route path="/users" element={<UsersContainer/>}/>
+
+            <Route path='/profile/:userId' element={<ProfileContainer />} />
+            
+            <Route path='/profile' element={<ProfileContainer />} />
+
+            <Route path='/login' element={<LoginPage/>} />
+
+
+          </Routes>
+          </div>
+        </div>  
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+ 
+export default connect(mapStateToProps, {initializeApp}) (App);
+

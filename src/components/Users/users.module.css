@@ -1,0 +1,25 @@
+.userPhoto{
+    height: 70px;
+    width: 70px;
+}
+
+.selectPage{
+    color:rgb(205, 90, 167);
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.number{
+    letter-spacing:30px;
+}
+
+.button{ 
+    background-color: #EEDDFF;
+    border: 6px solid #c0a2dc;
+    border-radius: 25px;
+}
+
+.users{
+    display: flex;
+    padding: 15px;
+}

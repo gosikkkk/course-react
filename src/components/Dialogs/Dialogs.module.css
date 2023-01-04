@@ -25,3 +25,13 @@
 .message{
     padding: 10px;
 }
+
+.textarea{
+    border: 6px solid #c0a2dc;
+}
+
+.button{ 
+    background-color: #EEDDFF;
+    border: 6px solid #c0a2dc;
+    border-radius: 25px;
+}
