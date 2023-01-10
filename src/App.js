@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense, lazy } from 'react'
 import './App.css';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
 import HeaderConatainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import {Routes, Route } from 'react-router-dom';
@@ -11,9 +10,7 @@ import { connect } from 'react-redux';
 import { initializeApp } from './components/redux/app-reduser'
 import Preloader from './components/common/Preloader/Preloader';
 
-
-
-
+const DialogsContainer = lazy(() => import("./components/Dialogs/DialogsContainer"));
 
 class App extends Component{
 
@@ -33,6 +30,7 @@ class App extends Component{
           <Navbar/>
 
           <div className='app-wrapper-content'>
+          <Suspense fallback={<Preloader />}>
           <Routes>
 
             <Route path="/dialogs" element={<DialogsContainer/>}/>
@@ -45,8 +43,8 @@ class App extends Component{
 
             <Route path='/login' element={<LoginPage/>} />
 
-
           </Routes>
+          </Suspense>
           </div>
         </div>  
     );

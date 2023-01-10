@@ -1,0 +1,20 @@
+.selectPage {
+    color: rgb(205, 90, 167);
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.paginator {
+    margin: 10px;
+}
+
+.pageNumber {
+    padding: 10px;
+
+}
+
+.nextBack {
+    background-color: #EEDDFF;
+    border: 6px solid #c0a2dc;
+    border-radius: 25px;
+}

@@ -1,5 +1,5 @@
-import { createStore ,combineReducers, applyMiddleware} from 'redux'
-import {profileReduser} from './profile-reduser'
+import { createStore ,combineReducers, applyMiddleware, compose} from 'redux'
+import profileReduser from './profile-reduser'
 import {dialogsReduser} from './dialogs-reduser'
 import {sidebarReduser} from './sidebar-reduser'
 import usersReduser from './users-reduser';
@@ -18,8 +18,9 @@ let redusers = combineReducers({
     app: appReduser
 });
 
-export let store = createStore(redusers, applyMiddleware(thunkMiddleware));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE || compose;
+const store = createStore(redusers, composeEnhancers(applyMiddleware(thunkMiddleware)))
 
-window.store = store;
+// window.__store__ = store;
 
 export default store;
