@@ -1,15 +1,41 @@
 .descriptionBlock{
+    display: inline-block;
+}
+
+.profile{
+    color: white;
     display: flex;
 
 }
-
-.info{
+.mainPhoto{
+    max-width: 200px;
     display: inline-block;
-    padding: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    border: 2px solid  #d583e2;
 }
 
-.status{
-    background-color: #EEDDFF;
-    border: 6px solid #c0a2dc;
-    border-radius: 25px;
+.buttonEdit{
+	background: linear-gradient( to right, #f29ff6, #d583e2, #f684ca );
+    width: 100px;
+    height: 20px;
+}
+
+.contact{
+    padding-left: 10px;
+}
+
+.formSummaryError{
+    padding: 5px;
+    color: red;
+}
+
+.formEdit{
+    /* display: flex; */
+    /* padding: 20px; */
+    /* column-gap: 50px; */
+    /* border: 1px solid red; */
+    /* max-width: 400px; */
 }

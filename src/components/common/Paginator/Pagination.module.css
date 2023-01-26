@@ -6,6 +6,8 @@
 
 .paginator {
     margin: 10px;
+    color: white;
+    padding: 20px;
 }
 
 .pageNumber {
@@ -14,7 +16,7 @@
 }
 
 .nextBack {
-    background-color: #EEDDFF;
-    border: 6px solid #c0a2dc;
-    border-radius: 25px;
+        background: linear-gradient( to right, #f29ff6, #d583e2, #f684ca );
+        width:50px;
+        height: 20px;
 }

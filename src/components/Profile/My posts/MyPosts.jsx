@@ -13,9 +13,10 @@ let AddNewPostForm = (props) => {
           <div><Field placeholder={"write post"} 
                       name={"newPostText"} 
                       component={Textarea}
-                      validate={[required, maxLength10, ]}/>
+                      validate={[required, maxLength10, ]}
+                      className={s.input}/>
           </div>
-          <div><button>Add Post</button></div>
+          <div><button className={s.buttonEdit}>Add Post</button></div>
       </form>
 )
 }

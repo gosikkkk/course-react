@@ -2,51 +2,55 @@ import React, { Component, Suspense, lazy } from 'react'
 import './App.css';
 import HeaderConatainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
-import {Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import LoginPage from './components/Login/Login';
 import { connect } from 'react-redux';
 import { initializeApp } from './components/redux/app-reduser'
 import Preloader from './components/common/Preloader/Preloader';
+import error from './assets/images/404.png'
 
 const DialogsContainer = lazy(() => import("./components/Dialogs/DialogsContainer"));
 
-class App extends Component{
+class App extends Component {
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.initializeApp()
-}
+  }
 
   render() {
 
-    if(!this.props.initialized){
-      return <Preloader/>
+    if (!this.props.initialized) {
+      return <Preloader />
     }
 
-    return(
-        <div className='app-wrapper'>
-          <HeaderConatainer/>
-          <Navbar/>
+    return (
+      <div className='app-wrapper'>
+        <HeaderConatainer />
+        <Navbar />
 
-          <div className='app-wrapper-content'>
+        <div className='app-wrapper-content'>
           <Suspense fallback={<Preloader />}>
-          <Routes>
+            <Routes>
 
-            <Route path="/dialogs" element={<DialogsContainer/>}/>
+              <Route path="/" element={<Navigate replace to="/profile" />} />
 
-            <Route path="/users" element={<UsersContainer/>}/>
+              <Route path="/dialogs" element={<DialogsContainer />} />
 
-            <Route path='/profile/:userId' element={<ProfileContainer />} />
-            
-            <Route path='/profile' element={<ProfileContainer />} />
+              <Route path="/users" element={<UsersContainer />} />
 
-            <Route path='/login' element={<LoginPage/>} />
+              <Route path='/profile/:userId' element={<ProfileContainer />} />
 
-          </Routes>
+              <Route path='/profile' element={<ProfileContainer />} />
+
+              <Route path='/login' element={<LoginPage />} />
+
+              <Route path='*' element={<><img className='error' src={error}/> <div className='text'>Sorry, the page is still in progress.</div></>} />
+            </Routes>
           </Suspense>
-          </div>
-        </div>  
+        </div>
+      </div>
     );
   }
 }
@@ -54,6 +58,6 @@ class App extends Component{
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 })
- 
-export default connect(mapStateToProps, {initializeApp}) (App);
+
+export default connect(mapStateToProps, { initializeApp })(App);
 

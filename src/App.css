@@ -19,3 +19,17 @@
     background-color: blueviolet;
 }
 
+.error{
+    height: 700px;
+    width: 700px;
+    position: relative;
+    top: -79px;
+    left: 13px;
+}
+
+.text{
+    color:white;
+    position: relative;
+    top: -154px;
+    left: 225px;
+}

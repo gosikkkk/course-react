@@ -1,14 +1,27 @@
 .nav{
-  padding: 90px;
+  padding: 90px 0px 0px 90px;
   grid-area: n;
   letter-spacing: 5px;
+  column-gap:20px;
 }
 
 .item a.active{
   color:rgb(205, 90, 167);
   font-weight: 700;
+
 }
 .item a{
-  color:black;
+  color:white;
   text-decoration: none;
+  column-gap:20px;
+  column-gap:20px;
+}
+
+.item{
+  padding: 3px;
+}
+
+.img{
+  width: 15px;
+  height: 15px;
 }

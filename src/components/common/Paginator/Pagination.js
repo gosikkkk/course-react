@@ -19,7 +19,7 @@ const Pagination = ({ totalUsersCount, pageSize, currentPage, onPageChanged, por
 
 
 
-    return <div className={styles.paginator}>
+    return <div className={cn(styles.paginator)}>
         {portionNumber > 1 &&
             <button className={styles.nextBack} onClick={() => { setPortionNumber(portionNumber - 1) }}>Back</button>}
 

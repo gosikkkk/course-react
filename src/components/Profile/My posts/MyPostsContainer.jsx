@@ -14,7 +14,6 @@ const mapDispatchoProps = (dispatch) => {
   addPost: (newPostText) =>{
     dispatch(addPostActionCreacter(newPostText));
   }
-
  }
 }
 

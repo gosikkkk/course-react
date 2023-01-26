@@ -53,11 +53,6 @@ class ProfileStatus extends React.Component {
                             ></input>
                         </div>
                     )}
-
-                    <div>{this.props.profile.aboutMe}</div>
-                    <div>{this.props.profile.contacts.github}</div>
-                    <div>{this.props.profile.lookingForAJobDescription}</div>
-                    <div>{this.props.profile.fullName}</div>
                 </div>
             </>
         )

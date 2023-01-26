@@ -11,15 +11,18 @@
 
 .number{
     letter-spacing:30px;
+    color:white;
 }
 
 .button{ 
-    background-color: #EEDDFF;
-    border: 6px solid #c0a2dc;
-    border-radius: 25px;
+        background: linear-gradient( to right, #f29ff6, #d583e2, #f684ca );
+        width: 70px;
+        height: 20px;
 }
 
 .users{
     display: flex;
     padding: 15px;
+    color:white;
+
 }

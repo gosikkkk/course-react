@@ -6,19 +6,19 @@ import {addPostActionCreacter,updatePostTextActionCreater} from './../../redux/p
 const MyPosts = (props) =>{
 
   let postElements = 
-  props.posts.map (p => <Post massage={p.message} likesCount={p.likesCount}/>);
+  props.posts.map (p => <Post key={p.id} massage={p.message} likesCount={p.likesCount}/>);
 
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    // props.dispatch(addPostActionCreacter());
+    props.dispatch(addPostActionCreacter());
 
   }
 
   let onPostChange = () =>{
     let text = newPostElement.current.value;
-    // let action = updatePostTextActionCreater(text);
-    // props.dispatch(action)
+    let action = updatePostTextActionCreater(text);
+    props.dispatch(action)
   }
 
     return (
